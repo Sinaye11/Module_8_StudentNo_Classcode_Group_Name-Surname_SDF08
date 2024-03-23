@@ -1,7 +1,7 @@
 /*Setting box sizing border box */
 *,
-*::before, 
-*::after{
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -16,17 +16,22 @@
 
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent:#16e0bd;
+    --clr-accent: #16e0bd;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+    /*Box shadow*/
+    /*Lighter shadow*/
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+        /*Darker shadow*/
+        0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
 
 }
 
 /* Media query */
-@media (min-width: 800px){
+@media (min-width: 800px) {
     :root {
         --fs-h1: 4.5rem;
         --fs-h2: 3.75rem;
@@ -65,9 +70,17 @@ h3 {
     margin: 0;
 }
 
-h1 {font-size: var(--fs-h1)}
-h2 {font-size: var(--fs-h2)}
-h3 {font-size: var(--fs-h3)}
+h1 {
+    font-size: var(--fs-h1)
+}
+
+h2 {
+    font-size: var(--fs-h2)
+}
+
+h3 {
+    font-size: var(--fs-h3)
+}
 
 
 .section__title {
@@ -75,7 +88,7 @@ h3 {font-size: var(--fs-h3)}
 
 }
 
-.section__title--intro{
+.section__title--intro {
     font-weight: var(--fw-reg);
 }
 
@@ -92,13 +105,65 @@ h3 {font-size: var(--fs-h3)}
 .section__subtitle--intro,
 .section__subtitle--about {
     background: var(--clr-accent);
+    padding: .25em 1em;
     font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+/*header*/
+
+nav {
+    display: none;
 }
 
 
+/*Intro section */
 
+.intro {
+    position: relative;
+}
 
+.intro__img {
+    box-shadow: var(--bs);
+}
+/*Sets width to the size of itself at all times across different screens*/
+.section__subtitle--intro {
+    display: inline-block;
+}
 
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
 
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        /*Picture won't disappear*/
+        /*Pushing image to on top*/
+        position: relative;
+        z-index: 2;
+    }
 
-
+    .section__subtitle--intro {
+        align-self: start;
+        /*Stops this from stretching down*/
+        grid-column: -1/1;
+        /*Stretches across the whole length*/
+        grid-row: 2;
+        /*Eliminating overlap*/
+        text-align: right;
+        /*Aligning text to the right*/
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+        /*Makes width 100% plus 1.5em making things align*/
+    }
+}
