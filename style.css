@@ -10,7 +10,7 @@
 :root {
     --ff-primary: 'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
-
+    /*Font weight*/
     --fw-reg: 300;
     --fw-bold: 900;
 
@@ -51,14 +51,41 @@ body {
     line-height: 1.6;
 }
 
-img {
-    display: block;
-    max-width: 100%;
+section {
+    padding: 5em 2em;
 }
 
 img {
     display: block;
     max-width: 100%;
+}
+
+strong {font-weight: var(--fw-bold)}
+
+/*Focus state*/
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/*Buttons*/
+
+.btn {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
 }
 
 /*Typography*/
@@ -81,7 +108,6 @@ h2 {
 h3 {
     font-size: var(--fs-h3)
 }
-
 
 .section__title {
     margin-bottom: .25rem;
@@ -163,7 +189,58 @@ nav {
         /*Aligning text to the right*/
         position: relative;
         left: -1.5em;
-        width: calc(100% + 1.5em);
         /*Makes width 100% plus 1.5em making things align*/
+        width: calc(100% + 1.5em);
+    }
+}
+
+/*My services section*/
+
+.my-services {
+    background-color: var(--clr-dark);
+    background-image: url(/img/services-bg.jpg);
+    background-size: cover;
+    /* background-blend-mode: multiply; */
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--services {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+.section__title--services::after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.25;
+}
+
+.services {
+    margin-bottom: 4em;
+}
+
+/*Shorting text length, pushes it to start on a new line*/
+.service {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+    .services {
+        /*Gives us the three columns*/
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*Adding margin*/
+    .service + .service{
+        margin-left: 2em;
     }
 }
