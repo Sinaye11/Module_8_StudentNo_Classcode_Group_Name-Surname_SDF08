@@ -51,6 +51,11 @@ img {
     max-width: 100%;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
 /*Typography*/
 
 h1,
@@ -65,7 +70,30 @@ h2 {font-size: var(--fs-h2)}
 h3 {font-size: var(--fs-h3)}
 
 
+.section__title {
+    margin-bottom: .25rem;
 
+}
+
+.section__title--intro{
+    font-weight: var(--fw-reg);
+}
+
+/*Setting this portion to start on a new line */
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    font-family: var(--ff-secondary);
+}
 
 
 
