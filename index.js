@@ -2,7 +2,7 @@
 const navToggle = document.querySelector('.nav-toggle');
 
 //Getting each individual link
-const navLinks = document.querySelectorAll('.nav--link')
+const navLinks = document.querySelectorAll('.nav__link')
 
 //Nav toggle when clicked on
 navToggle.addEventListener('click', () => {

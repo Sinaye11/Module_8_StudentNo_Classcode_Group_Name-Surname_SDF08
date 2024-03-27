@@ -6,8 +6,8 @@
 }
 
 /*Custom properties*/
-
 :root {
+    /*Font styles*/
     --ff-primary: 'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
     /*Font weight*/
@@ -98,7 +98,7 @@ strong {font-weight: var(--fw-bold)}
 h1,
 h2,
 h3 {
-    line-height: 1.1;
+    line-height: 1;
     margin: 0;
 }
 
@@ -116,7 +116,7 @@ h3 {
 }
 
 .section__title {
-    margin-bottom: .25rem;
+    margin-bottom: .25em;
 
 }
 
@@ -229,10 +229,6 @@ header {
     opacity: 0;
 }
 
-
-
-
-
 /*Hamburger*/
 .hamburger {
   
@@ -243,7 +239,7 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-dark);
+    background: var(--clr-accent);
     width: 2em;
     height: 3px;
     border-radius: 1em;
@@ -417,7 +413,7 @@ header {
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auo-fit, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
 }
 
 .portfolio__item {
@@ -427,8 +423,8 @@ header {
 
 .portfolio__img {
     transition: 
-       transform 750ms cubic-bezier(.5,0,.5,1),
-       opacity 250ms linear;
+    transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
 }
 
 .portfolio__item:focus {
@@ -437,9 +433,9 @@ header {
 }
 
 .portfolio__img:hover,
-.portfolio__item:focus .portfolio__img{
+.portfolio__item:focus .portfolio__img {
     transform: scale(1.2);
-    opacity: .5s;
+    opacity: .5;
 }
 
 /* footer */
@@ -494,3 +490,16 @@ header {
 }
 
 
+/* Individual portfolio item styles */
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
