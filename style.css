@@ -7,27 +7,30 @@
 /* Custom Properties, update these for your own design */
 
 :root {
-     /*Font styles*/
-    --ff-primary: 'Source Sans Pro', sans-serif;
+    /*Font styles*/
+    --ff-primary: 'Roboto', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
-     /*Font weight*/
-    --fw-reg: 300;
-    --fw-bold: 900;
+    /*Font weight*/
+    --fw-reg: 200;
+    --fw-bold: 600;
     /*Colors*/
-    --clr-light: #fff;
-    --clr-dark: #303030;
+    --clr-light: white;
+    --clr-dark: black;
     --clr-accent: #16e0bd;
-    
+    /* --clr-yellow: yellow; */
+    --clr-yellow: #FFFF66;
+
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
     /*Box shadow*/
     /*Lighter shadow*/
-    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
-    /*Darker shadow*/
-          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+        /*Darker shadow*/
+        0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
 }
+
 /*Media query*/
 @media (min-width: 800px) {
     :root {
@@ -40,15 +43,13 @@
 }
 
 /* General styles */
-
 /* This allows smooth scrolling, When certain buttons are clicked, it scrolls down to a specific area automatically  */
 html {
     scroll-behavior: smooth;
-} 
-
+}
 
 body {
-    background: var(--clr-light);
+    background: var(--clr-light); 
     color: var(--clr-dark);
     margin: 0;
     font-family: var(--ff-primary);
@@ -65,11 +66,14 @@ img {
     max-width: 100%;
 }
 
-strong { font-weight: var(--fw-bold) }
+strong {
+    font-weight: var(--fw-bold)
+}
 
 /*Focus state*/
 :focus {
-    outline: 3px solid var(--clr-accent);
+    /* outline: 3px solid var(--clr-accent); */
+    outline: 3px solid var(--clr-yellow);
     outline-offset: 3px;
 }
 
@@ -78,15 +82,16 @@ strong { font-weight: var(--fw-bold) }
 .btn {
     display: inline-block;
     padding: .5em 2.5em;
-    background: var(--clr-accent);
-    color: var(--clr-dark);
+    background: var(--clr-yellow);
+    color: var(--clr-accent);
     text-decoration: none;
     cursor: pointer;
-    font-size: .8rem;
+    font-size: .7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: var(--fw-bold);
     transition: transform 200ms ease-in-out;
+    
 }
 
 .btn:hover {
@@ -102,10 +107,17 @@ h3 {
     margin: 0;
 }
 
-h1 { font-size: var(--fs-h1) }
-h2 { font-size: var(--fs-h2) }
-h3 { font-size: var(--fs-h3) }
+h1 {
+    font-size: var(--fs-h1)
+}
 
+h2 {
+    font-size: var(--fs-h2)
+}
+
+h3 {
+    font-size: var(--fs-h3)
+}
 
 .section__title {
     margin-bottom: .25em;
@@ -114,6 +126,7 @@ h3 { font-size: var(--fs-h3) }
 .section__title--intro {
     font-weight: var(--fw-reg);
 }
+
 /*Setting this portion to start on a new line*/
 .section__title--intro strong {
     display: block;
@@ -126,10 +139,18 @@ h3 { font-size: var(--fs-h3) }
 
 .section__subtitle--intro,
 .section__subtitle--about {
-    background: var(--clr-accent);
+    /* background: var(--clr-accent); */
+    background: var(--clr-yellow);
     padding: .25em 1em;
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
+}
+
+.section__subtitle,
+.section__subtitle--intro {
+    color: green;
+    font-size: 25px;
+    /* font-weight: bold; */
 }
 
 .section__subtitle--work {
@@ -149,6 +170,7 @@ header {
 .logo {
     max-width: 100px;
 }
+
 /*Navbar position and background scheme*/
 .nav {
     position: fixed;
@@ -185,11 +207,13 @@ header {
 .nav__link:hover {
     color: var(--clr-accent);
 }
+
 /*Button styling*/
 .nav-toggle {
     padding: .5em;
     background: transparent;
-    border: 0; /*Turning the border off*/
+    border: 0;
+    /*Turning the border off*/
     cursor: pointer;
     position: absolute;
     right: 1em;
@@ -198,7 +222,8 @@ header {
 }
 
 .nav-open .nav {
-    transform: translateX(0); /*Slides the nav menu*/
+    transform: translateX(0);
+    /*Slides the nav menu*/
 }
 
 .nav-open .nav-toggle {
@@ -228,12 +253,14 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-accent);
+    /* background: var(--clr-accent); */
+    background: red;
     width: 2em;
     height: 3px;
     border-radius: 1em;
     transition: transform 250ms ease-in-out;
 }
+
 /*Pseudo elements*/
 .hamburger::before,
 .hamburger::after {
@@ -243,11 +270,19 @@ header {
     right: 0;
 }
 
-.hamburger::before { top: 6px; }
-.hamburger::after { bottom: 6px; }
+.hamburger::before {
+    top: 6px;
+}
 
+.hamburger::after {
+    bottom: 6px;
+}
 
 /*  Intro section  */
+
+/* .section__title--intro {
+    color: var(--clr-accent)
+} */
 
 .intro {
     position: relative;
@@ -256,6 +291,7 @@ header {
 .intro__img {
     box-shadow: var(--bs);
 }
+
 /*Setting width to the size of itself at times across different screens*/
 .section__subtitle--intro {
     display: inline-block;
@@ -267,20 +303,20 @@ header {
         width: min-content;
         margin: 0 auto;
         grid-column-gap: 1em;
-        grid-template-areas: 
+        grid-template-areas:
             "img title"
             "img subtitle";
         grid-template-columns: min-content max-content;
     }
-    
+
     .intro__img {
         grid-area: img;
         min-width: 250px;
         /*The picture won't disappear, pushes image to the top*/
         position: relative;
         z-index: 2;
-    }    
-    
+    }
+
     .section__subtitle--intro {
         align-self: start;
         /*Stops this from stretching down*/
@@ -292,21 +328,32 @@ header {
         /*Aligning text to the right*/
         position: relative;
         left: -1.5em;
-        /*Makes width 100% olus 1.5em making things align*/
+        /*Makes width 100% plus 1.5em making things align*/
         width: calc(100% + 1.5em);
     }
 }
 
-
-
 /*  My services section  */
 
+/*Getting the underline*/
+.section__title--services {
+
+    text-decoration-line: underline;
+    text-decoration-color: yellow;
+    text-decoration-style: solid;
+    text-decoration-thickness: 8%;
+}
+
 .my-services {
-    background-color: var(--clr-dark);
-    background-image: url(../img/services-bg.jpg);
+    /* background-color: var(--clr-dark); */
+    /* background-color: white;   */
+    background-image: url(./img/machinelearning5.jpg);
+    background-repeat: no-repeat;
+    /* background-size: 600px 600px; */
     background-size: cover;
-    /* background-blend-mode: multiply; */
-    color: var(--clr-light);
+    background-blend-mode: multiply;
+    /* color: var(--clr-light);  */
+    color: white;
     text-align: center;
 }
 
@@ -325,9 +372,6 @@ header {
     opacity: 0.25;
 }
 
-.services {
-    margin-bottom: 4em;
-}
 /*Shorting text length, pushes it to start on a new line*/
 .service {
     max-width: 500px;
@@ -336,17 +380,19 @@ header {
 
 @media (min-width: 800px) {
     .services {
-    /*Gives us the three columns*/
+        /*Gives us the three columns*/
         display: flex;
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
     }
+
     /*Adding margin*/
-    .service + .service {
+    .service+.service {
         margin-left: 2em;
     }
 }
+
 /*About me*/
 
 .about-me {
@@ -362,17 +408,17 @@ header {
     .about-me {
         display: grid;
         grid-template-columns: 1fr 200px;
-        grid-template-areas: 
+        grid-template-areas:
             "title img"
             "subtitle img"
             "text img";
         grid-column-gap: 2em;
     }
-    
+
     .section__title--about {
         grid-area: title;
     }
-    
+
     .section__subtitle--about {
         /*Moves from one side, all the way to the other side*/
         grid-column: 1 / -1;
@@ -383,37 +429,52 @@ header {
         padding-left: 1em;
         padding-right: calc(200px + 4em);
     }
-    
+
     .about-me__img {
         grid-area: img;
         position: relative;
         z-index: 2;
     }
-}
 
 /* My Work */
+
+.section__subtitle, 
+.section__subtitle--work {
+    text-decoration-line: underline;
+    text-decoration-color: yellow;
+    text-decoration-style: solid;
+    text-decoration-thickness: 8%;   
+} 
 
 .my-work {
     background-color: var(--clr-dark);
     color: var(--clr-light);
-    text-align: center;    
+    text-align: center;
+    padding: 5em 2em;
 }
 
 .portfolio {
     /*Grid positioning for the portfolio pictures*/
+    /* display: inline-grid; */
     display: inline-grid;
     gap: 3rem;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    grid-template-rows: repeat(225px 225px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(250px 250px); 
 }
+/*Height and width of pictures*/
+.portfolio__img {
+    height: 450px;
+    width: 650px;
+   
+} 
 
 .portfolio__item {
-    background: var(--clr-accent);
+    /* background: var(--clr-accent); */
     overflow: hidden;
 }
 
 .portfolio__img {
-    transition: 
+    transition:
         transform 750ms cubic-bezier(.5, 0, .5, 1),
         opacity 250ms linear;
 }
@@ -429,7 +490,6 @@ header {
     opacity: .5;
 }
 
-
 /* footer */
 
 .footer {
@@ -438,13 +498,14 @@ header {
     text-align: center;
     padding: 2.5em 0;
     font-size: var(--fs-h3);
-
 }
+
 /*Setting the color for everything in the footer*/
-.footer a { 
+.footer a {
     color: inherit;
     text-decoration: none;
 }
+
 /*Font size and weight*/
 .footer__link {
     font-weight: var(--fw-bold);
@@ -454,6 +515,7 @@ header {
 .social-list__link:hover {
     opacity: .7;
 }
+
 /*Shows the underline*/
 .footer__link:hover {
     text-decoration: underline;
@@ -466,15 +528,38 @@ header {
     margin: 2em 0 0;
     padding: 0;
 }
+
 /*Spacing the social list items*/
 .social-list__item {
     margin: 0 .5em;
 }
+
 /*Spacing of the links*/
 .social-list__link {
     padding: .5em;
 }
 
+/*Social media icons*/
+
+/*Setting the Codepen color*/
+.fa-codepen {
+    color: white;
+}
+
+.fa-youtube {
+    /* background: #bb0000;   */
+    color: red;
+}
+
+/*Setting the twitter color*/
+.fa-twitter {
+    /* background: #55ACEE;  */
+    color: #55ACEE;
+}
+
+.fa-github {
+    color: white;
+}
 
 /* Individual portfolio item styles */
 
@@ -488,4 +573,4 @@ header {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
+}}
